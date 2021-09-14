@@ -1,5 +1,7 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect, useRef} from 'react'
+import * as d3 from 'd3'
 
+import Circles from './Circles'
 import { getUsers } from '../api/users'
 
 function Home () {
@@ -17,15 +19,16 @@ function Home () {
   console.log(users)
   
   return (
-    <main className="mt-12 lg:mt-32">
+    <>
+      <Circles />
       <section className="container mx-auto">
         <ul>
           {users.map(user => (
-            <li key={user.id}>{user.name}</li>
+            <li key={user.id}><p>{user.name}</p></li>
           ))}
         </ul>
       </section>
-    </main>
+    </>
   )
 }
 
