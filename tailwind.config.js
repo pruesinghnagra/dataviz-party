@@ -6,7 +6,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'puce':'#d11d03',
+        'puce':'#ce7b9b',
       }
     },
   },  
