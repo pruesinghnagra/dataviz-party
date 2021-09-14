@@ -1,24 +1,32 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
+
+import { getUsers } from '../api/users'
 
 function Home () {
-    return (
-        <main className="mt-12 lg:mt-32">
-            <section className="container mx-auto px-6">
-                <h1 className='text-puce'>Hello</h1>
-            </section>
-            <div class="flex">
-                <div class="flex-1">
-                    <p>ewewew</p>  
-                </div>
-                <div class="flex-none">
-                    <p>eweewe</p>
-                </div>
-                <div class="flex-1">
-                    <p>ewewewe</p>
-                </div>
-            </div>
-        </main>
-    )
+  const [users, setUsers] = useState([])
+
+  useEffect(() => {
+    getUsers()
+    .then(res => {
+      setUsers(res)
+      return null
+    })
+    .catch(() => {})
+  }, [])
+
+  console.log(users)
+  
+  return (
+    <main className="mt-12 lg:mt-32">
+      <section className="container mx-auto">
+        <ul>
+          {users.map(user => (
+            <li key={user.id}>{user.name}</li>
+          ))}
+        </ul>
+      </section>
+    </main>
+  )
 }
 
 export default Home

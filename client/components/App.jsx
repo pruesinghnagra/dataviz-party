@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Nav from './Navigation'
+import Nav from './Nav'
 import Home from './Home'
 
 function App () {
