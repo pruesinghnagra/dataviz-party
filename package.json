@@ -62,6 +62,7 @@
     "babel-loader": "^8.2.1",
     "css-loader": "^5.0.1",
     "css-minimizer-webpack-plugin": "^2.0.0",
+    "d3": "^7.0.1",
     "eslint": "^7.13.0",
     "jest": "^26.6.3",
     "mini-css-extract-plugin": "^1.6.0",
