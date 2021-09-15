@@ -14,6 +14,14 @@ function Home () {
     })
     .catch(() => {})
   }, [])
+
+  useEffect(() => {
+    const svgElement = d3.select(ref.current)
+    svgElement.append('circle')
+      .attr('cx', 150)
+      .attr('cy', 70)
+      .attr('r',  50)
+  }, [])
   
   return (
     <>
