@@ -1,14 +1,10 @@
-import React, {useState, useEffect, useRef} from 'react'
-import * as d3 from 'd3'
+import React, {useState, useEffect} from 'react'
 
 import Circles from './Circles'
 import { getUsers } from '../api/users'
 
 function Home () {
   const [users, setUsers] = useState([])
-
-  const ref = useRef()
-  console.log(ref)
 
   useEffect(() => {
     getUsers()
